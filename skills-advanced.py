@@ -30,7 +30,21 @@ def top_chars(phrase):
 
     """
 
-    return []
+    counter = {}
+
+    for word in phrase:
+        print word
+
+    #     counter[len(word)] = counter.get(len(word), []) + [word]
+
+    # counter_list = []
+
+    # for word_length, word in counter.items():
+    #     counter_list.append((word_length, sorted(word)))
+
+    # return sorted(counter_list)
+
+    # return []
 
 
 def word_length_sorted(words):
