@@ -93,7 +93,7 @@ def count_words(phrase):
 
     word_count = {}
 
-    for word in phrase.split(" "):
+    for word in phrase.split():
         word_count[word] = word_count.get(word, 0) + 1
 
     return word_count
@@ -219,7 +219,15 @@ def get_sum_zero_pairs(numbers):
         [[-1, 1], [0, 0]]
     """
 
-    return []
+    num_pairs = []
+
+    for n in numbers:
+        if n < 0 and abs(n) in numbers:
+            num_pairs.append([n, abs(n)])
+        elif n == 0:
+            num_pairs.append([n, n])
+
+    return num_pairs
 
 
 def kids_game(names):
@@ -260,7 +268,27 @@ def kids_game(names):
     good solutions here will definitely require a dictionary.
     """
 
-    return []
+    words = {}
+
+    word_chain = [names.pop(0)]
+
+
+    for name in names:
+        words[name[0]] = words.get(name, []) + [name]
+        # words = {'y': ['yamask'], 's': ['starly'], 'b': ['booger'], 'k': ['kalob'], 'n': ['nicky']}
+
+
+    current_key = word_chain[-1][-1]
+
+    while current_key in words.keys():
+        word_chain.append(words[current_key][0])
+        del words[current_key][0]
+        current_key = word_chain[-1][-1][-1]
+        print current_key
+        print word_chain
+    else:
+        return word_chain
+
 
 
 #####################################################################
