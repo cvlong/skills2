@@ -1,0 +1,20 @@
+What are the three main design advantages that object orientation can provide?
+    Encapsulation: helps keep track of everything since data lives close to its functionality.
+    Abstraction: like the doorknob analogy, the user doesn't need to know how exactly how a method was created in order to use it.
+    Polymorphism: interchangeability of components and flexibility of types, so that the same method names and method calls can apply to classes and their subclasses.
+
+What is a class?
+    A class is a type of thing. Classes are a way to organize your program around particular attributes and behaviors.
+
+What is an instance attribute?
+    An instance attribute is a variable that's specific to a particular object or instance. It's assigned during instantiation of an object of a class.
+
+What is a method?
+    Methods are actions called on an object; they are like a function defined on a class. Methods always have at least one parameter, self (which is the instance itself). Methods can refer to attributes or call other methods. Methods calls use the following syntax - object.method(self, optional_arguments):
+
+What is an instance in object orientation?
+    An instance attribute is an instance or object of a particular class. For example, each list in your program is an instance of the list class.
+
+How is a class attribute different than an instance attribute? Give an example of when you might use each.
+    Class attributes are assigned during initialization using the __init__ method. They are immutable and set directly on the class, so all instances of that class will share the same class attributes.
+    Instance attributes are set directly on objects. This is the first place that the program looks for an instance's attribute, so the instance attribute will override a class attribute assignment and can be used when there is slight variation to class attributes assigned during initialization.
