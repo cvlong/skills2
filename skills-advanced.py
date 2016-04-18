@@ -31,20 +31,15 @@ def top_chars(phrase):
     """
 
     counter = {}
+    
+    for char in phrase:
+      if char not in [' ', ',', '.']:
+        counter[char] = counter.get(char, 0) + 1
 
-    for word in phrase:
-        print word
+    # print counter {'a': 2, 'e': 2, 'f': 4, 'i': 2, 'h': 2, 'k': 2, 's': 1, 'o': 2, 'S': 1, 't': 2}
 
-    #     counter[len(word)] = counter.get(len(word), []) + [word]
-
-    # counter_list = []
-
-    # for word_length, word in counter.items():
-    #     counter_list.append((word_length, sorted(word)))
-
-    # return sorted(counter_list)
-
-    # return []
+    highest = max(counter.values())
+    return [char for char, frequency in counter.items() if frequency == highest]
 
 
 def word_length_sorted(words):
